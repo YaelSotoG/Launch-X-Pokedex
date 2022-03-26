@@ -27,8 +27,8 @@
         <div class="contenedor">
             <div class="pokebola">
                 <div class="busqueda">
-                    <button class="boton"><img src="./src/search.png" class="icono-busqueda"></button>
-                    <input type="search" class="pokemon-busqueda" name="Pikachu"/>
+                    <button class="boton" onclick="fetchpokemon()"><img src="./src/search.png" class="icono-busqueda"></button>
+                    <input type="search" class="pokemon-busqueda" placeholder="Pikachu" id="pokeid"/>
                 </div>
             </div>
 
@@ -39,29 +39,134 @@
 
 
     <section class="datos">
-        <section class="poketarj">
+        
             <section class="pokedata">
                 <div class="pokeimg">
-                    <img src="./src/cyndaquil.png" alt="" class="img">
+                    <img src="./src/cyndaquil.png" alt="pokemon" class="img" id="pokemonIMG">
                 </div>
                 <div class="pokeinfo">
-                    <h1>No.155 Cyndaquil</h1>
+                    <h1 id="pokemonName">No.155 Cyndaquil</h1>
                     <ul>
-                        <li>Raton de Fuego</li>
-                        <li>Type <p>Fuego</p></li>
-                        <li>Height <p>0.5m</p></li>
-                        <li>Weight <p>7.9kg</p></li>
-                        <li>Hability <p>Mar llamas</p></li>
+                        <li>Type <p id="poketipo">Fuego</p></li>
+                        <li>Height <p id="pokealtura">0.5m</p></li>
+                        <li>Weight <p id="pokepeso">7.9kg</p></li>
+                        <li>Hability <p id="pokehab">Mar llamas</p></li>
                     </ul>
                 </div>
             </section>
-            <div class="pokedesc">
-                <p>Cyndaquil se protege soltando llamas por el lomo. 
-                Cuando está enfadado, las llamas son fieras, pero, si está cansado, 
-                solo consigue echar algunas chispas que no llegan a cuajar en una completa combustión.</p>
-            </div>
-        </section>
+            <section class="stats">
+                <ul class="barra-stats">
+                    <li id="hp-15"></li>
+                    <li id="hp-14"></li>
+                    <li id="hp-13"></li>
+                    <li id="hp-12"></li>
+                    <li id="hp-11"></li>
+                    <li id="hp-10"></li>
+                    <li id="hp-9"></li>
+                    <li id="hp-8"></li>
+                    <li id="hp-7"></li>
+                    <li id="hp-6"></li>
+                    <li id="hp-5"></li>
+                    <li id="hp-4"></li>
+                    <li id="hp-3"></li>
+                    <li id="hp-2"></li>
+                    <li id="hp-1"></li>
+                    <span>HP</span>
+                </ul>
+                <ul class="barra-stats">
+                    <li id="at-15"></li>
+                    <li id="at-14"></li>
+                    <li id="at-13"></li>
+                    <li id="at-12"></li>
+                    <li id="at-11"></li>
+                    <li id="at-10"></li>
+                    <li id="at-9"></li>
+                    <li id="at-8"></li>
+                    <li id="at-7"></li>
+                    <li id="at-6"></li>
+                    <li id="at-5"></li>
+                    <li id="at-4"></li>
+                    <li id="at-3"></li>
+                    <li id="at-2"></li>
+                    <li id="at-1"></li>
+                    <span>Attack</span>
+                </ul>
+                <ul class="barra-stats">
+                    <li id="def-15"></li>
+                    <li id="def-14"></li>
+                    <li id="def-13"></li>
+                    <li id="def-12"></li>
+                    <li id="def-11"></li>
+                    <li id="def-10"></li>
+                    <li id="def-9"></li>
+                    <li id="def-8"></li>
+                    <li id="def-7"></li>
+                    <li id="def-6"></li>
+                    <li id="def-5"></li>
+                    <li id="def-4"></li>
+                    <li id="def-3"></li>
+                    <li id="def-2"></li>
+                    <li id="def-1"></li>
+                    <span>Defense</span>
+                </ul>
+                <ul class="barra-stats">
+                    <li id="sa-15"></li>
+                    <li id="sa-14"></li>
+                    <li id="sa-13"></li>
+                    <li id="sa-12"></li>
+                    <li id="sa-11"></li>
+                    <li id="sa-10"></li>
+                    <li id="sa-9"></li>
+                    <li id="sa-8"></li>
+                    <li id="sa-7"></li>
+                    <li id="sa-6"></li>
+                    <li id="sa-5"></li>
+                    <li id="sa-4"></li>
+                    <li id="sa-3"></li>
+                    <li id="sa-2"></li>
+                    <li id="sa-1"></li>
+                    <span>Special Attack</span>
+                </ul>
+                <ul class="barra-stats">
+                    <li id="sd-15"></li>
+                    <li id="sd-14"></li>
+                    <li id="sd-13"></li>
+                    <li id="sd-12"></li>
+                    <li id="sd-11"></li>
+                    <li id="sd-10"></li>
+                    <li id="sd-9"></li>
+                    <li id="sd-8"></li>
+                    <li id="sd-7"></li>
+                    <li id="sd-6"></li>
+                    <li id="sd-5"></li>
+                    <li id="sd-4"></li>
+                    <li id="sd-3"></li>
+                    <li id="sd-2"></li>
+                    <li id="sd-1"></li>
+                    <span>Special Defense</span>
+                </ul>
+                <ul class="barra-stats">
+                    <li id="sp-15"></li>
+                    <li id="sp-14"></li>
+                    <li id="sp-13"></li>
+                    <li id="sp-12"></li>
+                    <li id="sp-11"></li>
+                    <li id="sp-10"></li>
+                    <li id="sp-9"></li>
+                    <li id="sp-8"></li>
+                    <li id="sp-7"></li>
+                    <li id="sp-6"></li>
+                    <li id="sp-5"></li>
+                    <li id="sp-4"></li>
+                    <li id="sp-3"></li>
+                    <li id="sp-2"></li>
+                    <li id="sp-1"></li>
+                    <span>Speed</span>
+                </ul>
+
+            </section>
     </section>
+    
 
 
 
