@@ -2,9 +2,10 @@ body{
     margin: 10px;
     padding: 0;
     border: 0;
+    font-family: monospace;
 }
 .nav{
-    background-color: red;
+    background-color: #C50A23;
     width: calc(100vw-20px);
     height: calc(20vh);
     border-bottom: white solid 5px;
@@ -74,16 +75,101 @@ body{
     transform: translateY(5px);
   
 }
+.busqueda{
+    box-sizing: content-box;
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: bottom;
+}
+.boton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    background-color:rgba(212, 232, 233, 1);
+}
+.icono-busqueda{
+    box-sizing: content-box;
+    width: 25px;
+    height: 25px;
 
+}
+.pokemon-busqueda{
+    width:130px;
+    margin-bottom: 5px;
+}
 .datos{
     margin: 0 10px 0 10px;
     width: calc(100vw-20px);
-    height: calc(60vh);
-    background-color:rgba(212, 232, 233, 0.5);
+    height: calc(100vh);
+    background-color:rgba(212, 232, 233, 0.8);
     border-left: #76C1BE solid 3px;
     border-right: #76C1BE solid 3px;
+    padding-top: 10px;
+    overflow-y:scroll;
+    
+}
+.poketarj{
+    box-sizing: content-box;
+    height: auto;
+    margin: 10px 10px 10px 10px;
+    background-color:white;
+    border-radius:10px;
+}
+.pokedata{
+    box-sizing: content-box;
+    height: auto;
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px  ,1fr));/*el autofit ocupa el maximo espacio, el autofill no*/
+    background-color:#88D5E2;
+    
+    
+    border-radius:10px;
+    border:1px solid white;
+}
+.pokeimg{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+.img{
+    box-sizing: content-box;
+    width: 100%;
+    height: auto;
+}
+.pokeinfo{
+    margin:10px;
+}
+.pokedesc{
+    height:auto;
+    margin:0 10px 0 10px;
+    font-size: calc(2vw + 10px);
+    padding-bottom: 5px;
+    
 }
 
+h1{
+    color: white;
+    font-size: 40px;
+
+}
+ul{
+    padding-left: 5px;
+}
+ul li{
+    color: #08428D;
+    font-size: calc(2vw + 10px);
+    display:flex;
+    border-bottom: 1px solid white;
+    margin-top: 20px;
+    justify-content: space-between;
+    font-weight: bold;
+}
 
 
 
@@ -95,7 +181,7 @@ footer{
     height: calc(20vh);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    background-color: red;
+    background-color: #C50A23;
     border-bottom: white solid 5px;
     transform: rotateX(180deg);
     outline: 2px solid black;
