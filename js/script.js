@@ -170,12 +170,10 @@ const statsSpeed=(url)=>{
 const ataques=(url)=>{
     console.log(url);
     let total=url.length;
-    
     for(let i=0;total!=i;i++){
-        const lista=document.getElementById('lista-ataques');
         console.log(url[i].move.name);
         const ataque=document.createElement('li');
-        lista.appendChild(ataque);
+        document.getElementById('lista-ataques').appendChild(ataque);
         ataque.innerHTML=url[i].move.name;
         
     }
