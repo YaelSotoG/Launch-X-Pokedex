@@ -19,7 +19,7 @@ body{
     z-index: 3;
 }
 .nav{
-    margin-top:10px;
+    margin:10px 10px 0 10px;
     background-color: #C50A23;
     width: calc(100vw-20px);
     height: calc(18vh);
@@ -130,9 +130,11 @@ body{
     width:calc(25vw);
     height: 30px;
     border-radius: 5px;
+    border: 1px solid #76C1BE;
+    background-color:rgba(212, 232, 233, 1);
 }
 .datos{
-    margin: 0 10px 0 10px;
+    margin: 0 20px 0 20px;
     width: calc(100vw-20px);
     height: auto;
     background-color:rgba(212, 232, 233, 0.8);
@@ -226,9 +228,34 @@ span{
 }
 
 
+.next{
+    box-sizing: content-box;
+    margin:10px;
+    background-color:#88D5E2;
+    border-radius: 10px;
+  
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px  ,1fr));
+}
+.tarj-evolucion{
+    box-sizing: content-box;
+    margin:10px;
+    background-color:white;
+    border-radius: 10px;
+    border: 3px solid #08428D;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.img-evolucion{
+    width:75%;
+}
+
 
 footer{
-    margin-bottom: 10px;
+    margin: 0 10px 10px 10px;
     width: calc(100vw-20px);
     height: calc(18vh);
     border-top-left-radius: 20px;

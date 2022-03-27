@@ -29,7 +29,7 @@
         <div class="contenedor">
             <div class="pokebola">
                 <div class="busqueda">
-                    <button class="boton" onclick="fetchpokemon()"><img src="./src/search.png" class="icono-busqueda"></button>
+                    <button class="boton" onclick="fetchName()"><img src="./src/search.png" class="icono-busqueda"></button>
                 </div>
             </div>
 
@@ -41,7 +41,7 @@
 
     <section class="datos">
         <div class="input">
-            <input type="search" class="pokemon-busqueda" placeholder="Pikachu" id="pokeid"/>
+            <input type="search" class="pokemon-busqueda" placeholder="Pokemon o Numero" id="pokeid"/>
         </div>
             <section class="poketarj">
             <section class="pokedata">
@@ -64,7 +64,9 @@
                 solo consigue echar algunas chispas que no llegan a cuajar en una completa combustión.</p>
             </div>
         </section>
-            <section class="stats">
+
+
+        <section class="stats">
                 <ul class="barra-stats">
                     <li id="hp-15"></li>
                     <li id="hp-14"></li>
@@ -173,8 +175,22 @@
                     <li id="sp-1"></li>
                     <span>Speed</span>
                 </ul>
+        </section>
 
-            </section>
+        <section class="next">
+            <button class="tarj-evolucion" onclick="fetchIDP();">
+                <img src="./src/pokeball.png" alt="pokemon" id="previo" class="img img-evolucion"/>
+                <p id="pokeprev">N/A</p> 
+            </button>
+            <button class="tarj-evolucion"> 
+                <img src="./src/pokeball.png" alt="pokemon" id="actual" class="img img-evolucion"/>
+                <p id="pokeactual">cyndaquil</p> 
+            </button>
+            <button class="tarj-evolucion" onclick="fetchIDN()">  
+                 <img src="./src/pokeball.png" alt="pokemon" id="next" class="img img-evolucion"/>
+                <p id="pokenext">cyndaquil</p> 
+            </button>
+        </section>
     </section>
     
 
