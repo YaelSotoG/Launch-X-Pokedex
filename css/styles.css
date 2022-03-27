@@ -1,9 +1,13 @@
 body{
-    margin: 10px;
+    margin: 0px;
     padding: 0;
     border: 0;
     font-family: monospace;
    
+}
+.img-back{
+    z-index: 0;
+    position: fixed;
 }
 .background{
     display:flex;
@@ -12,8 +16,10 @@ body{
     flex-direction: column;
     justify-content: center;
     margin:auto;
+    z-index: 3;
 }
 .nav{
+    margin-top:10px;
     background-color: #C50A23;
     width: calc(100vw-20px);
     height: calc(18vh);
@@ -133,6 +139,7 @@ body{
     border-left: #76C1BE solid 3px;
     border-right: #76C1BE solid 3px;
     padding: 10px 0 10px 0;
+    z-index: 2;
    
     
 }
@@ -221,6 +228,7 @@ span{
 
 
 footer{
+    margin-bottom: 10px;
     width: calc(100vw-20px);
     height: calc(18vh);
     border-top-left-radius: 20px;
