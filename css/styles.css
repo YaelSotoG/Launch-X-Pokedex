@@ -252,7 +252,19 @@ span{
 .img-evolucion{
     width:75%;
 }
-
+.ataques{
+    display:flex;
+    flex-direction: column;
+    box-sizing: content-box;
+    margin:10px;
+    height:200px;
+    font-size: calc(2vw + 5px);
+    background-color:#88D5E2;
+    overflow-y:scroll ;
+    color:#08428D;
+    align-items:center;
+    justify-self: center;
+}
 
 footer{
     margin: 0 10px 10px 10px;

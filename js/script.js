@@ -22,9 +22,11 @@ const fetchpokemon=(pokeId)=>{
         let pokesa=data.stats[3].base_stat;
         let pokesd=data.stats[4].base_stat;
         let pokespeed=data.stats[5].base_stat;
+        let atack=data.moves;
         const urlidnext='https://pokeapi.co/api/v2/pokemon/'+(pokeno+1);
         const urlidprev='https://pokeapi.co/api/v2/pokemon/'+(pokeno-1);
         console.log(urlidnext);
+        
         pokeImg(pokeurl);
         pokeName(pokename,pokeno);
         pokeTipo(poketype);
@@ -37,6 +39,7 @@ const fetchpokemon=(pokeId)=>{
         statsSa(pokesa);
         statsSD(pokesd);
         statsSpeed(pokespeed);
+        
         fetch(urlidnext).then((next)=>{ return next.json();}).then((datanext)=>{
             let pokenext=datanext.sprites.front_default;
             let pokenamenext=datanext.forms[0].name;
@@ -49,12 +52,13 @@ const fetchpokemon=(pokeId)=>{
             let pokenop=datanext.id;
             pokePrev(pokeprev,pokenamep,pokenop);
         });
+        ataques(atack);
     });//es una funcion para hacer peticiones a una api
 
     
 
 
-    fetch(urldesc).then((res)=>{console.log(res);
+    fetch(urldesc).then((res)=>{
         return res.json();}).then((data)=>{
             console.log(data);         
             let val=0;
@@ -163,6 +167,19 @@ const statsSpeed=(url)=>{
     CalcStats(url,'sp-');
 }
 
+const ataques=(url)=>{
+    console.log(url);
+    let total=url.length;
+    
+    for(let i=0;total!=i;i++){
+        const lista=document.getElementById('lista-ataques');
+        console.log(url[i].move.name);
+        const ataque=document.createElement('li');
+        lista.appendChild(ataque);
+        ataque.innerHTML=url[i].move.name;
+        
+    }
+}
 
 const CalcStats=(url,id)=>{
     let val=(url/13.3)+1;
