@@ -1,4 +1,5 @@
 var id=0;
+var total=0;
 const fetchpokemon=(pokeId)=>{
     
     const url='https://pokeapi.co/api/v2/pokemon/'+pokeId;
@@ -13,6 +14,9 @@ const fetchpokemon=(pokeId)=>{
         let pokeno=data.id;
         id=pokeno;
         let poketype=data.types[0].type.name;
+
+        let poketype2=data.types.length<2?null:data.types[1].type.name;
+        console.log(poketype2);
         let pokepeso=data.weight;
         let pokealt=data.height;
         let pokehab=data.abilities[0].ability.name;
@@ -25,11 +29,10 @@ const fetchpokemon=(pokeId)=>{
         let atack=data.moves;
         const urlidnext='https://pokeapi.co/api/v2/pokemon/'+(pokeno+1);
         const urlidprev='https://pokeapi.co/api/v2/pokemon/'+(pokeno-1);
-        console.log(urlidnext);
         
         pokeImg(pokeurl);
         pokeName(pokename,pokeno);
-        pokeTipo(poketype);
+        pokeTipo(poketype,poketype2);
         pokePeso(pokepeso);
         pokeHeight(pokealt);
         pokeHab(pokehab);
@@ -60,7 +63,7 @@ const fetchpokemon=(pokeId)=>{
 
     fetch(urldesc).then((res)=>{
         return res.json();}).then((data)=>{
-            console.log(data);         
+    
             let val=0;
             for(let i=0; data.flavor_text_entries[i].language.name != 'es'; i++){
                 val=i;
@@ -126,9 +129,16 @@ const pokeName=(url,no)=>{
 
 }
 
-const pokeTipo=(url)=>{
+const pokeTipo=(url,url2)=>{
     const tipo=document.getElementById('poketipo');
+    const tipo2=document.getElementById('poketipo2');
     tipo.innerHTML=url;
+    if(url2==null){
+        tipo2.innerHTML='';
+    }
+    else{
+        tipo2.innerHTML=url2;
+    }
 }
 
 const pokeHeight=(url)=>{
@@ -168,15 +178,17 @@ const statsSpeed=(url)=>{
 }
 
 const ataques=(url)=>{
-    console.log(url);
-    let total=url.length;
+    while(document.getElementById('lista-ataques').firstChild){//elimina los hijos de la lista
+        document.getElementById('lista-ataques').removeChild(document.getElementById('lista-ataques').firstChild);
+    }
+    total=url.length;
     for(let i=0;total!=i;i++){
-        console.log(url[i].move.name);
         const ataque=document.createElement('li');
         document.getElementById('lista-ataques').appendChild(ataque);
         ataque.innerHTML=url[i].move.name;
         
     }
+    document.getElementById('lista-ataques').reset();
 }
 
 const CalcStats=(url,id)=>{
