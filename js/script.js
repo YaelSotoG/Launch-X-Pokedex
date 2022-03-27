@@ -5,8 +5,14 @@ const fetchpokemon=(pokeId)=>{
     const url='https://pokeapi.co/api/v2/pokemon/'+pokeId;
     const urldesc='https://pokeapi.co/api/v2/pokemon-species/'+pokeId;
     fetch(url).then((res)=>{
+        if(res.status != 200){
+            fetchpokemon(1);
+        }
+        else
+        {
         console.log(res);
         return res.json();
+    }
     }).then((data)=>{
         console.log(data);
         let pokeurl=data.sprites.front_default;
