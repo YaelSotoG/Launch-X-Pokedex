@@ -13,6 +13,7 @@
 </head>
 
 <body background="./src/background.jpg">
+<section class="background">
     <section class="nav">
         <div class="contenedor_2">
             <div class="circulos">
@@ -28,7 +29,6 @@
             <div class="pokebola">
                 <div class="busqueda">
                     <button class="boton" onclick="fetchpokemon()"><img src="./src/search.png" class="icono-busqueda"></button>
-                    <input type="search" class="pokemon-busqueda" placeholder="Pikachu" id="pokeid"/>
                 </div>
             </div>
 
@@ -39,7 +39,10 @@
 
 
     <section class="datos">
-        
+        <div class="input">
+            <input type="search" class="pokemon-busqueda" placeholder="Pikachu" id="pokeid"/>
+        </div>
+            <section class="poketarj">
             <section class="pokedata">
                 <div class="pokeimg">
                     <img src="./src/cyndaquil.png" alt="pokemon" class="img" id="pokemonIMG">
@@ -54,6 +57,12 @@
                     </ul>
                 </div>
             </section>
+            <div class="pokedesc" id="infodex">
+                <p>Cyndaquil se protege soltando llamas por el lomo. 
+                Cuando está enfadado, las llamas son fieras, pero, si está cansado, 
+                solo consigue echar algunas chispas que no llegan a cuajar en una completa combustión.</p>
+            </div>
+        </section>
             <section class="stats">
                 <ul class="barra-stats">
                     <li id="hp-15"></li>
@@ -184,9 +193,10 @@
             </div>
         </div>
         <div class="contenedor">
-            <div class="pokebola"></div>
+            <div class="pokebola"><div class="busqueda"> </div>  </div>
 
         </div>
     </footer>
+</section>
 </body>
 </html>

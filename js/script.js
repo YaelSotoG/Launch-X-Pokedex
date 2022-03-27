@@ -1,6 +1,7 @@
 const fetchpokemon=()=>{
     let pokeId=document.getElementById('pokeid').value.toLowerCase();
     const url='https://pokeapi.co/api/v2/pokemon/'+pokeId;
+    const urldesc='https://pokeapi.co/api/v2/pokemon-species/'+pokeId;
     fetch(url).then((res)=>{
         console.log(res);
         return res.json();
@@ -32,6 +33,20 @@ const fetchpokemon=()=>{
         statsSD(pokesd);
         statsSpeed(pokespeed);
     });//es una funcion para hacer peticiones a una api
+
+
+    fetch(urldesc).then((res)=>{console.log(res);
+        return res.json();}).then((data)=>{
+            console.log(data);         
+            let val=0;
+            for(let i=0; data.flavor_text_entries[i].language.name != 'es'; i++){
+                val=i;
+            }
+            val++;
+            let descripcion=data.flavor_text_entries[val].flavor_text;
+            pokeDesc(descripcion);
+
+        });
 }
 fetchpokemon();
 
@@ -39,6 +54,11 @@ fetchpokemon();
 const pokeImg=(url)=>{
         const imagen=document.getElementById('pokemonIMG');
         imagen.src=url;
+}
+
+const pokeDesc=(url)=>{
+    const desc=document.getElementById('infodex');
+    desc.innerHTML=url;
 }
 
 const pokeName=(url,no)=>{
@@ -53,12 +73,12 @@ const pokeTipo=(url)=>{
 
 const pokeHeight=(url)=>{
     const height=document.getElementById('pokealtura');
-    height.innerHTML=url;
+    height.innerHTML=(url/10)+' m';
 }
 
 const pokePeso=(url)=>{
     const peso=document.getElementById('pokepeso');
-    peso.innerHTML=url;
+    peso.innerHTML=(url/10)+' kg';
 }
 
 const pokeHab=(url)=>{
@@ -86,6 +106,7 @@ const statsSD=(url)=>{
 const statsSpeed=(url)=>{
     CalcStats(url,'sp-');
 }
+
 
 const CalcStats=(url,id)=>{
     let val=(url/13.3)+1;
